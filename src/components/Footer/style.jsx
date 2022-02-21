@@ -5,9 +5,13 @@ const SFooter = styled.footer`
   color: white;
   padding: 20px;
   margin-top: 50px;
+  height: 30%;
+  box-shadow: rgba(45, 61, 85, 1) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background: #a90000;
 
   .legalNotice {
-    width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -22,14 +26,13 @@ const SFooter = styled.footer`
   .legalNotice p {
     text-align: center;
     font-size: 14px;
-    width: 80%;
+    width: 40%;
   }
 
   .copyright {
-    width: 100%;
     text-align: center;
     font-size: 12px;
-    margin-top: 40px;
+    margin-top: 10px;
   }
 
   .playerGames {
@@ -40,7 +43,7 @@ const SFooter = styled.footer`
   }
   .mentionsUl,
   .snsCopyright {
-    height: 100%;
+    height: 70%;
     display: flex;
     flex-direction: column;
     justify-content: center;

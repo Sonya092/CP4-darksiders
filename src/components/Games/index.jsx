@@ -14,7 +14,8 @@ export default function Games() {
 
   function message() {
     if (Pv <= 10) {
-      alert('KOOOOOOOOOOOOOOOO !!!!!!!!!!!!!!!!!');
+      // eslint-disable-next-line no-alert
+      alert('You Win!');
       document.documentElement.style.setProperty('--progress', `0%`);
       setPv(0);
     }

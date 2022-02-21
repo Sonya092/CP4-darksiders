@@ -13,6 +13,8 @@ const SCharacters = styled.section`
   clear: both;
   line-height: 1.1;
   text-transform: uppercase;
+  position: relative;
+
   img {
     transform: rotateY(180deg);
     border-radius: 10px;
@@ -21,10 +23,7 @@ const SCharacters = styled.section`
     position: relative;
     transform-style: preserve-3d;
     transition: all 0.8s ease;
-    margin-top: 30px;
     align-content: space-between;
-    margin: auto;
-    margin-top: 3em;
     font-weight: bolder;
     bottom: 0;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -40,6 +39,12 @@ const SCharacters = styled.section`
     justify-content: center;
     padding-top: 1rem;
   }
+  button {
+    background-color: transparent;
+    border: none;
+    margin-top: 30px;
+  }
+
   @media screen and (max-width: 700px) {
     flex-flow: column wrap;
   }

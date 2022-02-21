@@ -1,32 +1,59 @@
-import Death from './Death.jpg';
-import War from './War2.jpg';
-import Fury from './Fury3.jpg';
-import Discord from './Discord2.jpg';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import SCharacters from './style';
+import ModalCharacters from './ModalCharacters';
 
 function Characters() {
+  const [openModalCharacters, setOpenModalCharacters] = useState(false);
+  const [characters, setCharacters] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/characters`)
+      .then(({ data }) => {
+        setCharacters(data);
+      })
+      .catch(() => {
+        setCharacters("Cette page ne contient pas d'image.");
+        toast.error('Une erreur est survenue !', {
+          position: 'top-center',
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: 'colored',
+        });
+      });
+  }, []);
   return (
     <SCharacters>
-      <div className="death">
-        <img
-          src={Discord}
-          alt="discordCharacters"
-          className="discordCharacters"
-        />
-        <h3>Discord</h3>
-      </div>
-      <div className="death">
-        <img src={War} alt="warCharacters" className="warCharacters" />
-        <h3>War</h3>
-      </div>
-      <div className="death">
-        <img src={Fury} alt="furyCharacters" className="furyCharacters" />
-        <h3>Fury</h3>
-      </div>
-      <div className="death">
-        <img src={Death} alt="deathCharacters" className="deathCharacters" />
-        <h3>Death</h3>
-      </div>
+      {characters.map((character) => {
+        return (
+          <div className="Discord">
+            <button
+              type="button"
+              onClick={() => {
+                setOpenModalCharacters(true);
+              }}
+            >
+              <img
+                src={character.image}
+                alt="discordCharacters"
+                className="discordCharacters"
+              />
+            </button>
+            <h3>{character.characterName}</h3>
+            {openModalCharacters && (
+              <ModalCharacters
+                closeModalCharacters={setOpenModalCharacters}
+                description={character.description}
+              />
+            )}
+          </div>
+        );
+      })}
     </SCharacters>
   );
 }
