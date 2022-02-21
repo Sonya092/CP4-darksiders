@@ -103,7 +103,7 @@ function Comments() {
   return (
     <SComments>
       <form className="commentSection" onSubmit={handleSubmit}>
-        <ul>
+        <ul className="scroller">
           {commentList
             .filter((data) => {
               return parseInt(data.idPages, 10) === dicoPages[pageUrl];
@@ -128,7 +128,12 @@ function Comments() {
                 <div className="infoContainer">
                   <p className="nameDisplay">{comments.nameAuthor}</p>
                   <div className="dateContainer">
-                    <p className="dateDisplay">Publié le {comments.date}</p>
+                    <p className="dateDisplay">
+                      {comments.date
+                        ? `Publié le ${comments.date.split('T')[0]} à
+                      ${comments.date.split('T')[1].split('.')[0]}`
+                        : ''}
+                    </p>
                   </div>
                   <p className="messageDisplay">{comments.message}</p>
                 </div>

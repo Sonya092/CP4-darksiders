@@ -11,6 +11,11 @@ const SComments = styled.section`
     display: flex;
     flex-direction: column;
     margin: 50px 0 -50px 0;
+    .scroller {
+      width: 90%;
+      height: 100px;
+      overflow-y: scroll;
+    }
   }
   .commentSection {
     margin: auto;
@@ -18,8 +23,12 @@ const SComments = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    ul {
+    .scroller {
       width: 90%;
+      height: 400px;
+      overflow-y: scroll;
+      box-shadow: rgba(49, 49, 117, 0.185) 0px 30px 60px -12px inset,
+        rgba(253, 252, 252, 0.568) 0px 18px 36px -18px inset;
     }
   }
   .writeComment {
@@ -65,14 +74,15 @@ const SComments = styled.section`
   }
   .nameDisplay {
     margin: 10px 0;
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
-    color: #ffff;
+    color: #a90000;
+    font-family: cursive;
   }
   .dateDisplay {
     font-size: 14px;
     font-weight: lighter;
-    color: #ad45b1;
+    color: #bbb2b2;
   }
   .messageDisplay {
     margin: 10px 0;
@@ -88,9 +98,10 @@ const SComments = styled.section`
       rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
       rgba(207, 200, 206, 0.35) 0px -2px 6px 0px inset;
     background-color: transparent;
-    color: #ad45b1;
+    color: #fff;
     font-size: 22px;
     margin: 5px 0 15px 0;
+    font-family: cursive;
   }
   h5 {
     color: #fff;

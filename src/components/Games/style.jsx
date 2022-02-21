@@ -12,6 +12,7 @@ const SGames = styled.section`
   height: 30vw;
   width: 90%;
   margin: auto;
+  padding-top: 60px;
 
   button {
     width: 125px;
@@ -42,20 +43,20 @@ const SGames = styled.section`
     width: 60vw;
     height: 50px;
     border: 2px solid black;
-    border-radius: 50px;
     vertical-align: middle;
     margin-left: 20px;
     font-size: 30px;
+    font-family: cursive;
   }
 
   .PV {
     width: var(--progress);
     height: 51.5px;
     background-color: #f3f3f3;
+    padding-top: 5px;
     text-align: center;
     margin-top: -1px;
     margin-left: -1px;
-    border-radius: 50px;
   }
   .Attack {
     margin-top: -20px;
